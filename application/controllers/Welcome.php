@@ -23,8 +23,8 @@ class Welcome extends CI_Controller {
 		$area =  $this->chart_model->select_area();
 		$start_date = '2021-01-01';
 		$end_date = '2021-01-05';
-		$dataTabel = $this->chart_model->get_data('',$start_date,$end_date);
-		$data = array('area' => $area,'data' => $dataTabel, 'area_id' => '','start_date' => $start_date, 'end_date' => $end_date);
+		$dataTable = $this->chart_model->get_data('',$start_date,$end_date);
+		$data = array('area' => $area,'data' => $dataTable, 'area_id' => '','start_date' => $start_date, 'end_date' => $end_date);
 		$this->load->view('welcome_message',$data, FALSE);
 	}
 
@@ -47,8 +47,8 @@ class Welcome extends CI_Controller {
 		// var_dump($data);exit;
 
 		$area =  $this->chart_model->select_area();
-		$data = array('area' => $area, 'data' => $data,'area_id' => $area_id, 'start_date' => $start_date, 'end_date' => $end_date);
-		$this->load->view('welcome_message',$data, FALSE);
+		$dataArr = array('area' => $area, 'data' => $data,'area_id' => $area_id, 'start_date' => $start_date, 'end_date' => $end_date);
+		$this->load->view('welcome_message',$dataArr, FALSE);
 	}
 
 
